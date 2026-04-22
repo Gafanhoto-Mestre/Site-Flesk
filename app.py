@@ -13,9 +13,10 @@ cardapio_db = [
 def index():
     return render_template('cardapio.html', pratos=cardapio_db)
 
-@app.route('/carrinho')
+@app.route('/index')
 def carrinho():
-    return render_template('carrinho.html')
+    return render_template('index.html')
+
 
 if __name__ == '__main__':
     # host='0.0.0.0' permite que você acesse pelo IP do PC no celular
