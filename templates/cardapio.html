@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor da Massa - Cardápio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Sabor da Massa</h1>
+        <p>O melhor macarrão na chapa!</p>
+    </header>
+
+    <main class="container">
+        {% for prato in pratos %}
+        <div class="card">
+            <div class="card-info">
+                <h3>{{ prato.nome }}</h3>
+                <p>{{ prato.descricao }}</p>
+                <span class="preco">R$ {{ "%.2f"|format(prato.preco) }}</span>
+                <button class="btn-add" onclick="adicionarAoCarrinho('{{ prato.nome }}','{{ prato.preco }}')">
+                    Adicionar
+                </button>
+            </div>
+        </div>
+        {% endfor %}
+    </main>
+
+    <div class="footer-carrinho">
+        <span id="total-txt">Total: R$ 0,00</span>
+        <button class="btn-ver-carrinho" onclick="window.location.href='/carrinho'">Ver Carrinho</button>
+    </div>
+
+    <script>
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+        function atualizarTotal() {
+            const total = carrinho.reduce((sum, item) => sum + item.preco, 0);
+            document.getElementById('total-txt').innerText = `Total: R$ ${total.toFixed(2)}`;
+        }
+
+        function adicionarAoCarrinho(nome, preco) {
+            carrinho.push({nome: nome, preco: preco});
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            atualizarTotal();
+            alert(nome + " adicionado!");
+        }
+
+        atualizarTotal(); // Atualiza ao carregar a página
+    </script>
+</body>
+</html>
