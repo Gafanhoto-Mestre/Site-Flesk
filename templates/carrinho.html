@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Carrinho</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
     <header><h1>Meu Pedido</h1></header>
     <main class="container">
         <div id="lista-itens"></div>
-        <div class="pagamento">
-            <h3>Forma de Pagamento</h3>
-            <select id="metodo">
-                <option value="pix">Pix</option>
-                <option value="cartao">Cartão na Entrega</option>
-            </select>
-        </div>
-        <button class="btn-finalizar" onclick="enviarPedido()">Confirmar Pedido</button>
+        <form action="/final" method="post">
+            <div class="pagamento">
+                <label for="ipagamento"><h3>Forma de Pagamento</h3></label>
+                <select name="metodo_pagamento" id="ipagamento">
+                    <option value="Pix">Pix</option>
+                    <option value="Cartão/Débito">Cartão/Débito</option>
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="Cartão/Crédito">Cartão/Crédito</option>
+                </select>
+            </div>
+            <input type="submit" class="btn-finalizar" value="Confirmar Pedido">
+        </form>
+
         <a href="/" style="display:block; text-align:center; margin-top:20px;">Voltar</a>
     </main>
 

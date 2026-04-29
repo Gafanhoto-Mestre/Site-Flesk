@@ -1,11 +1,69 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
-body { background: #f4f4f4; padding-bottom: 80px; }
-header { background: #e63946; color: white; text-align: center; padding: 20px; }
-.container { padding: 15px; max-width: 500px; margin: auto; }
-.card { background: white; margin-bottom: 10px; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-.preco { color: #2a9d8f; font-weight: bold; display: block; margin: 5px 0; }
-.btn-add { background: #e63946; color: white; border: none; padding: 8px; border-radius: 4px; width: 100%; cursor: pointer; }
-.footer-carrinho { position: fixed; bottom: 0; width: 100%; background: #333; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
-.btn-ver-carrinho { background: #ffb703; border: none; padding: 10px; border-radius: 5px; font-weight: bold; }
-.card-carrinho { background: white; padding: 10px; border-bottom: 1px solid #ddd; }
-.btn-finalizar { background: #2a9d8f; color: white; width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1.1rem; margin-top: 20px; }
+* { 
+    margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+
+body { 
+    background: #f4f4f4; 
+    padding-bottom: 80px; }
+
+header { 
+    background: #e63946; 
+    color: white; 
+    text-align: center; 
+    padding: 20px; }
+
+.container { 
+    padding: 15px; 
+    max-width: 500px; 
+    margin: auto; }
+
+.card { 
+    background: white; 
+    margin-bottom: 10px; 
+    padding: 15px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+
+.preco { 
+    color: #2a9d8f; 
+    font-weight: bold; 
+    display: block; 
+    margin: 5px 0; }
+
+.btn-add { 
+    background: #e63946; 
+    color: white; border: none; 
+    padding: 8px; border-radius: 4px; 
+    width: 100%; cursor: pointer; }
+
+.footer-carrinho { 
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+    background: #333; 
+    color: white; 
+    padding: 15px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; }
+
+.btn-ver-carrinho { 
+    background: #ffb703; 
+    border: none; 
+    padding: 10px; 
+    border-radius: 5px; 
+    font-weight: bold; }
+
+.card-carrinho { 
+    background: white; 
+    padding: 10px; 
+    border-bottom: 1px solid #ddd; }
+
+.btn-finalizar { 
+    background: #2a9d8f; 
+    color: white; 
+    width: 100%; 
+    padding: 15px; 
+    border: none; 
+    border-radius: 8px; 
+    font-size: 1.1rem; 
+    margin-top: 20px; }
