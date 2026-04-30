@@ -4,10 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final</title>
+    <style>
+        strong{
+            color: blue; 
+            font-size: 50px"
+        }
+    </style>
 </head>
 <body>
     <h1>Pedido finalizado!</h1>
-    <p>A forma de pagamento escolhida foi: <strong style="color: blue; font-size: 50px">{{ pagamento }}</strong> </p>
+    <p>Nome: <strong>{{ nome }}</strong></p>
+    
+    <p>Forma de pagamento: <strong>{{ pagamento }}</strong> </p>
+
+    <p>Dia: <strong>{{ dia }}</strong></p>
+
+    <p>Hora: {{ hora }} </p>
+
+    <p>CPF: <strong>{{ cpf }}</strong></p>
+
     <p>Obrigado pela preferência!</p>
 </body>
 </html>

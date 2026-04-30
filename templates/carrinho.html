@@ -12,6 +12,49 @@
         <div id="lista-itens"></div>
         <form action="/final" method="post">
             <div class="pagamento">
+                
+                <p>
+                    <!-- input:text-->
+                    <label for="inome">Nome: </label>
+                    <input type="text" name="nome" id="inome" required maxlength="15" placeholder="Digite seu nome" autocomplete="name">
+                </p>
+                <p>
+                    <!-- input:number -->
+                    <label for="imedia">Média: </label>
+                    <input type="number" name="media" id="imedia" value="5" max="10" step="0.1">
+                </p>
+                <p>
+                    <!-- input:date  / calendário normal -->
+                    <!-- input:month / calendário de mês -->
+                    <label for="ical">Calendário</label>
+                    <input type="date" name="cal" id="ical" value="2026-04-11">
+                </p>
+                <p>
+                    <!-- input:time / Hor -->
+                    <label for="ihora">Horário</label>
+                    <input type="time" name="hora" id="ihora">
+                </p>
+                <p>
+                    <label for="icpf">CPF</label>
+                    <input 
+                    type="text" 
+                    name="cpf" 
+                    id="icpf" 
+                    placeholder="000.000.000-00"
+                    inputmode="numeric" 
+                    maxlength="14"
+                    pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"
+                    title="Digite o CPF no formato 000.000.000-00"
+                    required
+                    >
+                </p>
+                <p>
+                    <!-- input:submit / Enviar -->
+                    <!-- input:reset / Limpar -->
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Limpar">
+                </p>
+          
                 <label for="ipagamento"><h3>Forma de Pagamento</h3></label>
                 <select name="metodo_pagamento" id="ipagamento">
                     <option value="Pix">Pix</option>

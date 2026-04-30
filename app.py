@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 
+from datetime import datetime
+
 app = Flask(__name__)
 
 # Dados simulados (No futuro virão do Banco de Dados)
@@ -20,8 +22,21 @@ def carrinho():
 
 @app.route('/final', methods=['POST'])
 def finalizado():
+    g_nome= request.form.get('nome')
+    g_dia= request.form.get('cal')
+    print(type(g_dia))
+    data= datetime.strptime(g_dia, '%Y-%m-%d')
+    data_for= data.strftime('%d-%m-%Y')
+    g_hora= request.form.get('hora')
+    g_cpf= request.form.get('cpf')
     pagamento_escolhido = request.form.get('metodo_pagamento')
-    return render_template('finalizado.html', pagamento=pagamento_escolhido)
+
+    return render_template(
+        'finalizado.html', pagamento=pagamento_escolhido, nome=g_nome,
+        dia=data_for,
+        hora=g_hora,
+        cpf=g_cpf
+        )
 
 
 if __name__ == '__main__':
