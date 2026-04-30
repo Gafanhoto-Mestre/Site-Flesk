@@ -26,7 +26,7 @@ def finalizado():
     g_dia= request.form.get('cal')
     print(type(g_dia))
     data= datetime.strptime(g_dia, '%Y-%m-%d')
-    data_for= data.strftime('%d-%m-%Y')
+    data_for= data.strftime('%d/%m/%Y')
     g_hora= request.form.get('hora')
     g_cpf= request.form.get('cpf')
     pagamento_escolhido = request.form.get('metodo_pagamento')

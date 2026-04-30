@@ -3,26 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final</title>
+    <title>Cupom Fiscal</title>
     <style>
-        strong{
-            color: blue; 
-            font-size: 50px"
+        /* Reset de margens para impressão */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace; /* Fonte clássica de impressora */
+        }
+
+        body {
+            background-color: #555; /* Fundo escuro para destacar o cupom na tela */
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Container que simula o papel térmico */
+        .cupom {
+            width: 320px; /* Largura aproximada de 80mm */
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            color: #000;
+            text-transform: uppercase; /* Cupons geralmente são em caixa alta */
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #000;
+            padding-bottom: 10px;
+        }
+
+        .info-grupo {
+            margin: 8px 0;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info-grupo strong {
+            color: #000; /* Removido o azul para manter o realismo */
+            font-size: 13px;
+        }
+
+        .separador {
+            border-top: 1px dashed #000;
+            margin: 10px 0;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        /* Estilos específicos para quando for imprimir */
+        @media print {
+            body { background-color: transparent; padding: 0; }
+            .cupom { box-shadow: none; width: 100%; }
         }
     </style>
 </head>
 <body>
-    <h1>Pedido finalizado!</h1>
-    <p>Nome: <strong>{{ nome }}</strong></p>
-    
-    <p>Forma de pagamento: <strong>{{ pagamento }}</strong> </p>
 
-    <p>Dia: <strong>{{ dia }}</strong></p>
+    <div class="cupom">
+        <h2>PEDIDO FINALIZADO</h2>
+        
+        <div class="info-grupo">
+            <span>CLIENTE:</span>
+            <strong>{{ nome }}</strong>
+        </div>
+        
+        <div class="info-grupo">
+            <span>PAGAMENTO:</span>
+            <strong>{{ pagamento }}</strong>
+        </div>
 
-    <p>Hora: {{ hora }} </p>
+        <div class="separador"></div>
 
-    <p>CPF: <strong>{{ cpf }}</strong></p>
+        <div class="info-grupo">
+            <span>DATA:</span>
+            <span>{{ dia }}</span>
+        </div>
+        
+        <div class="info-grupo">
+            <span>HORA:</span>
+            <span>{{ hora }}</span>
+        </div>
 
-    <p>Obrigado pela preferência!</p>
+        <div class="info-grupo">
+            <span>CPF/CNPJ:</span>
+            <strong>{{ cpf }}</strong>
+        </div>
+
+        <div class="separador"></div>
+
+        <footer>
+            <p>OBRIGADO PELA PREFERÊNCIA!</p>
+            <p>*** VOLTE SEMPRE ***</p>
+        </footer>
+    </div>
+
 </body>
 </html>
